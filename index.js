@@ -1,19 +1,20 @@
-var firstName = "obiora";
+"use strict";
+let firstName = "obiora";
 firstName = "mark";
 console.log(firstName);
 //tuple
-var fruits;
+let fruits;
 fruits = [1, 'mango', true];
 fruits = [2, 'pawpaw', false];
 //tuple array
-var employee;
+let employee;
 employee = [
     [1, 'obiora'],
     [2, 'mark'],
     [3, 'linus']
 ];
 //union    : you can use type in union
-var pid;
+let pid;
 pid = 1;
 pid = "4";
 //enums
@@ -39,21 +40,21 @@ var direction3;
     direction3["right"] = "right";
 })(direction3 || (direction3 = {}));
 //object
-var user = {
+const user = {
     id: 1,
     firstName: 'obiora'
 };
-var user2 = {
+const user2 = {
     id: 1,
     firstName: 'obiora'
 };
 //type assertion/ casting
-var cid = "mark";
-var customerID = cid;
+let cid = "mark";
+let customerID = cid;
 customerID = 5;
 // OR
-var uid = "mark";
-var userID = uid;
+let uid = "mark";
+let userID = uid;
 customerID = 5;
 //functions
 function addNum(x, y) {
@@ -65,23 +66,30 @@ function info(message) {
     console.log(message);
 }
 info("hello world");
-var user3 = {
+const user3 = {
     id: 1,
     firstName: 'obiora'
 };
-var add = function (x, y) { return x + y; };
+const add = (x, y) => x + y;
 //classes
-var person = /** @class */ (function () {
-    function person(id, name) {
+class person {
+    constructor(id, name) {
         this.id = id;
         this.name = name;
     }
-    person.prototype.register = function () {
-        return "".concat(this.name, " is now registered");
-    };
-    return person;
-}());
-var person1 = new person(1, 'linus mark');
-var person2 = new person(2, 'amaka');
+    register() {
+        return `${this.name} is now registered`; // a method
+    }
+}
+const person1 = new person(1, 'linus mark');
+const person2 = new person(2, 'amaka');
 console.log(person1, person2);
 console.log(person1.register());
+//generic: this helps us use placeholders, use this  instead of using type any
+function getArrary(items) {
+    return new Array().concat(items);
+}
+let numArray = getArrary([1, 2, 3, 4]);
+let strArray = getArrary(['mark', 'john', 'Bob']);
+numArray.push(2);
+strArray.push('amaka');
