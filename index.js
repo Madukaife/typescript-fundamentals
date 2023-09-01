@@ -93,3 +93,23 @@ let numArray = getArrary([1, 2, 3, 4]);
 let strArray = getArrary(['mark', 'john', 'Bob']);
 numArray.push(2);
 strArray.push('amaka');
+// function that detects an even number
+function evenNumber(x) {
+    if (x % 2 === 0) {
+        return true;
+    }
+    return false;
+}
+console.log(evenNumber(10));
+//function that detects a palindrome
+function palindrome(words) {
+    const cleanedWords = words.replace(/[\W_]/g, "").toLowerCase();
+    const reversedWords = cleanedWords.split("").reverse().join("");
+    if (cleanedWords === reversedWords) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(palindrome("amma"));

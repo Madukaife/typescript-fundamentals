@@ -146,3 +146,29 @@ let strArray = getArrary<string>(['mark', 'john', 'Bob'])
 numArray.push(2)
 strArray.push('amaka')
 
+// function that detects an even number
+function evenNumber(x: number): boolean {
+    if (x % 2 === 0) {
+return true
+    }
+    return false
+}
+console.log(evenNumber(10))
+
+
+//function that detects a palindrome
+function palindrome(words: string): boolean {
+    const cleanedWords:string = words.replace(/[\W_]/g, "").toLowerCase();
+  
+    const reversedWords = cleanedWords.split("").reverse().join("");
+  
+    if (cleanedWords === reversedWords) {
+      return true;
+    } else {
+      return false;
+    }
+    
+}
+console.log(palindrome("amma"))
+
+  
